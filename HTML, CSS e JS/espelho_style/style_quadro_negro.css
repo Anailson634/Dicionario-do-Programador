@@ -1,0 +1,13 @@
+.at {
+    color: rgb(111, 150, 187);
+} .at_l {
+    color: rgb(241, 202, 116);
+} .at_n {
+    color: rgb(83, 126, 83);
+} .at_a {
+    color: blueviolet;
+}
+#code {
+    background-color: rgba(41, 41, 41, 0.986);
+    padding: 4px;
+}
