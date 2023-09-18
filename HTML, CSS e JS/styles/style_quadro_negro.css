@@ -1,3 +1,5 @@
+  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 .at {
     color: rgb(111, 150, 187);
 } .at_l {
@@ -8,6 +10,9 @@
     color: blueviolet;
 }
 #code {
+    font-size: larger;
+    border-radius: 3px;
     background-color: rgba(41, 41, 41, 0.986);
-    padding: 4px;
+    padding: 10px;
+    color: white;
 }

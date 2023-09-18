@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style_quadro_negro.css">
+    <link rel="stylesheet" href="../styles/style-geral.css">
+    <link rel="stylesheet" href="api-style.css">
+    <title>APIs</title>
+</head>
+<body>
+    <header>
+        <h1>Trabalhando com APIs</h1>
+    </header>
+    <nav>
+        <div>
+            <h3>Instalando pendencias</h3>
+
+            <h3>Estabelecendo uma API com FLASK</h3>
+            <div id="code">
+                from flask import Flask, request, jsonify <br>
+                from flask_cors import CORS
+            </div>
+            <div id="code"  onclick="sumir('.Non1')">app = Flask(__name__) <br>
+                CORS(app)
+            </div>
+
+            <div class="Non1">
+                <div class="Infos">
+                    <h4>Flask:</h4>
+                    <p>Flask é o nome da classe principal do framework Flask. É a partir dessa classe que você constrói sua aplicação web.</p>
+                </div>
+                <div class="Infos">
+                    <h4>app:</h4>
+                    <p>Você está criando uma instância da classe Flask e atribuindo-a à variável app. Essa variável é um identificador que você
+                        usará para interagir com a instância do Flask e definir rotas, configurações, tratamento de requisições, etc.</p>
+                </div>
+                <div class="Infos">
+                    <h4>__name__: </h4>
+                    <p>O argumento passado para a classe Flask é __name__, que é uma variável especial em Python que se refere ao nome do módulo
+                        em que o código está sendo executado. Quando você usa __name__, o Flask usa esse valor para determinar o local da raiz da
+                        sua aplicação, o que é importante para que ele possa encontrar arquivos estáticos, templates, e assim por diante.</p>
+                </div>
+                <p>Em resumo, a linha app = Flask(__name__) cria uma instância da aplicação Flask que você usará para definir as funcionalidades
+                    da sua aplicação, como rotas, tratamento de requisições, configurações e muito mais.</p>
+                <div class="Infos">
+                    <h4>CORS:</h4>
+                    <p>
+                        CORS significa "Cross-Origin Resource Sharing" e é uma técnica que permite que servidores web restrinjam quais recursos (como
+                        dados, scripts, etc.) de um domínio são acessíveis a partir de um determinado domínio. Ela é uma medida de segurança implementada
+                         pelos navegadores para evitar ataques de origem cruzada. <br>
+                        <br>
+                        Quando você adiciona CORS(app) à sua aplicação Flask, você está ativando o suporte a CORS. Isso é útil quando você tem uma API que
+                         precisa ser acessada por domínios diferentes (ou origens) daquele em que a API está hospedada
+                    </p>
+                </div>
+            </div>
+
+            <div id="code" onclick="sumir('.Non2')">
+                @app.route('/', methods=['GET'])
+                <br>
+                def get_dados(): <br>
+                    <div class="indent-4">
+                        #Aqui é onde carregamos os dados do arquivo json
+                        <br> return {"Nome": Naah, "Idade": 17}
+                    </div>
+            </div>
+            <div class="Non2">
+                <div class="Infos">
+                    <h4>@app.rout:</h4>
+                    <p><span class="marker">@app.route('/')</span> Isso é chamado de decorador. Ele é usado para mapear uma função para uma URL específica.
+                        No caso, a função abaixo deste decorador será executada quando alguém acessar a raiz da sua aplicação, ou
+                        seja, quando a URL for o próprio domínio (por exemplo, http://localhost:5000/).
+                        <span class="marker">methods=['GET']:</span> Isso especifica os métodos HTTP permitidos para acessar essa rota. Nesse caso, apenas
+                        solicitações HTTP <span class="marker">GET</span> são permitidas. Isso significa que quando alguém acessar a URL mapeada por essa rota
+                        usando uma solicitação GET (por exemplo, digitando a URL em um navegador), a função associada a essa rota será
+                        chamada.</p>
+                </div>
+
+                <div class="Infos">
+                    <h4>Função get_dados()</h4>
+                    <p>Essa função carrega na pagina tudo que esta sendo retornado</p>
+                </div>
+            </div>    
+
+            <div id="code" onclick="sumir('.Non3')">
+                @app.route('/receber', methods=['POST'])
+                <br> def response_front():
+                    <div class="indent-4">
+                        response_date=request.json
+                        <br> print(response_date)
+                        <br>
+                        <br> msgObj={'Sucesso': 'Update realizado com sucesso'}
+                        <br> return jsonify(msgObj), 200
+                    </div>   
+            </div>
+            <div class="Non3">
+                <div class="Infos">
+                    <h4>response_front():</h4>
+                    <p>Criamos uma nova rota sendo ela <span class="marker">http://localhost:5000/receber</span> com o metado <span class="marker">POST</span>
+                        que estara sujeito a respostas dos usuarios que a utilizarem e tentarem usar o metado POST. <br>
+                    
+                        A função <span class="marker">response_front()</span> será executada quando uma solicitação POST for feita para essa rota,
+                        A variável <span class="marker">response_date</span>  está recebendo os dados JSON enviados na solicitação POST. A função
+                        <span class="marker">request.json</span> é usada para analisar os dados JSON enviados na solicitação e converter em um objeto Python.
+                    </p>
+                </div>
+                <div class="Infos">
+                    <h4>jsonify:</h4>
+                    <p>Nesta linha, a resposta é retornada ao cliente que fez a solicitação. A função <span class="marker">jsonify()</span> é usada para converter o dicionário Python em
+                        um objeto JSON válido. O número <span class="marker">200</span> é o código de status HTTP que indica uma resposta bem-sucedida (no caso, "OK").</p>
+                </div>
+            </div>
+
+            <div id="code">
+                if __name__ == '__main__':
+                <div class="indent-4">app.run()</div>
+            </div>
+            <p>Estas ultimas linhas iniciam a nossa API</p>
+
+        </div>
+    </nav>
+
+    <script src="display-none.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.letra_exempolo {
+    font-family: monospace;
+    border-right: 4px solid;
+    width: 52ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(52) infinite, blinking 0.5s infinite step-end, alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0px;
+    }
+}
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}

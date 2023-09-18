@@ -1,0 +1,19 @@
+.style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    width: 150px;
+    height: 150px;
+    color: white;
+    background-color: rgba(36, 36, 36, 0.856);
+}
+.n1 {border: 4px None red;}
+.n2 {border: 4px solid red;}
+.n3 {border: 4px Dashed red;}
+.n4 {border: 4px double red;}
+.n5 {border: 4px dotted red;}
+.n6 {border: 4px groove red;}
+.n7 {border: 4px inset red;}
+.n8 {border: 4px outset red;}
+.n9 {border: 4px ridge red;}
