@@ -11,3 +11,6 @@ body {
     margin-top: 3px;
     opacity: 10px;
 }
+main:hover > :not(:hover) {
+    opacity: 0.6;
+}
