@@ -1,16 +1,14 @@
 header {
     text-align: center;
-} #code {
-    width: 40% !important;
-    margin: 7px;
+} img {
+    width: 45% !important;
+    margin-left: 27%;
 }
 .marker {
     background-color: rgba(0, 255, 13, 0.212);
 }
-.indent-4 {
-    padding: 0px 0px 0px 30px;
-}
 .Infos {
+    cursor: pointer;
     transition: 1s;
 }
 .Infos:hover {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style_quadro_negro.css">
+    <!--<link rel="stylesheet" href="../styles/style_quadro_negro.css">-->
     <link rel="stylesheet" href="../styles/style-geral.css">
     <link rel="stylesheet" href="api-style.css">
     <title>APIs</title>
@@ -15,15 +15,9 @@
     </header>
     <nav>
         <div>
-            <h3>Instalando pendencias</h3>
-
-            <h3>Estabelecendo uma API com FLASK</h3>
-            <div id="code">
-                from flask import Flask, request, jsonify <br>
-                from flask_cors import CORS
-            </div>
-            <div id="code"  onclick="sumir('.Non1')">app = Flask(__name__) <br>
-                CORS(app)
+            <img src="imports.png" alt="Importações">
+            <div id="code"  onclick="sumir('.Non1')">
+                <img src="instancia.png" alt="instancias">
             </div>
 
             <div class="Non1">
@@ -58,13 +52,7 @@
             </div>
 
             <div id="code" onclick="sumir('.Non2')">
-                @app.route('/', methods=['GET'])
-                <br>
-                def get_dados(): <br>
-                    <div class="indent-4">
-                        #Aqui é onde carregamos os dados do arquivo json
-                        <br> return {"Nome": Naah, "Idade": 17}
-                    </div>
+                <img src="page1.png" alt="Pagina 1">
             </div>
             <div class="Non2">
                 <div class="Infos">
@@ -85,15 +73,7 @@
             </div>    
 
             <div id="code" onclick="sumir('.Non3')">
-                @app.route('/receber', methods=['POST'])
-                <br> def response_front():
-                    <div class="indent-4">
-                        response_date=request.json
-                        <br> print(response_date)
-                        <br>
-                        <br> msgObj={'Sucesso': 'Update realizado com sucesso'}
-                        <br> return jsonify(msgObj), 200
-                    </div>   
+                <img src="page2.png" alt="Pagina 2">
             </div>
             <div class="Non3">
                 <div class="Infos">
@@ -113,10 +93,7 @@
                 </div>
             </div>
 
-            <div id="code">
-                if __name__ == '__main__':
-                <div class="indent-4">app.run()</div>
-            </div>
+            <img src="run.png" alt="Inicialização">
             <p>Estas ultimas linhas iniciam a nossa API</p>
 
         </div>
