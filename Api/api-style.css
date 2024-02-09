@@ -20,3 +20,17 @@ header {
 .Non1, .Non2, .Non3 {
     display: none;
 }
+.botao {
+    color: rgba(255, 255, 255, 0.856);
+    cursor: pointer;
+    border: 1px solid black;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(1, 1, 87, 0.555);
+    transition: transform 0.2s, opacity 0.2s; /* Adicionar transição para suavizar a alteração */
+} .botao:active {
+    transform: scale(0.95); /* Diminuir a escala ao clicar */
+    opacity: 0.7; /* Reduzir a opacidade ao clicar */
+}

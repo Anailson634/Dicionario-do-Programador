@@ -95,10 +95,46 @@
 
             <img src="run.png" alt="Inicialização">
             <p>Estas ultimas linhas iniciam a nossa API</p>
-
+        </div>
+        <div class="botao" onclick="copiar()">
+            <p>Copie o codigo</p>
         </div>
     </nav>
 
+    <script>
+        function copiar() {
+            navigator.clipboard.writeText(`
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+dados_dic={"Nome": "Anailson", "Idade": 17}
+CORS(app)
+
+@app.rout("/", methods=["GET", "PUT"])
+def get_dados():
+    #Aqui é onde carregamos e editamos os dados do arquivo json
+
+    if request.mehtods=="PUT":
+        date=request.get_json() #Pega os dados em JSON enviados pelo cliente
+
+        for key, value in date.items(): #percorre os dados e sobscreve (ou adiciona) no dados_dic
+            dados_dic[key]=value
+    return dados_dic
+
+@app.route("/receber", methods=["POST"])
+def response_front():
+    response_date=request.json
+    print(response_date)
+
+    msgObj={"Sucesso": "Update realizado com sucesso"}
+    return jsonify(msgObj), 200
+
+if __name__=="__main__":
+    app.run() 
+`)
+        }
+    </script>
     <script src="display-none.js"></script>
 </body>
 </html>
