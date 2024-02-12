@@ -1,4 +1,6 @@
 body {
+    color: rgba(212, 212, 212, 0.623);
+    font-size: 18px;
     background: url('../Imagens/minimalist.jpg');
     background-size: cover;
 

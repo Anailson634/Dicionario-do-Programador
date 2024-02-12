@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style-geral.css">
+    <title>Fatch API</title>
+    <style>
+        p {
+            width: 40vw;
+        }
+        .imagens {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 46vw !important;
+        }
+        .botao {
+            background-color: rgba(255, 0, 0, 0.432);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 10px;
+            width: 60px;
+            height: 25px;
+            border: 1px outset;
+            transition: 20ms;
+        }
+        .botao:active {
+            background-color: rgba(255, 174, 0, 0.267);
+            width: 80px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fetch API</h1>
+    
+        <div class="imagens">
+            <img src="code.png">
+            <div class="botao" onclick="carregar_copy()">copy</div>
+        </div>
+        <div class="imagens">
+            <img src="GET.png">
+            <div class="botao" onclick="get_copy()">copy</div>
+        </div>
+        <div class="imagens">
+            <img src="PUT.png">
+            <div class="botao" onclick="put_copy()">copy</div>
+        </div>
+        <p></p>
+    </div>
+
+    <script>
+        function carregar_copy() {
+            navigator.clipboard.writeText(`
+async function carregar() {
+    const init={
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({"Mensagem": "dados"}) //Json que sera enviado para a API
+    }
+    const url=await fetch("url/api", init) //carregando API, aplicando as configurações
+    const dados_recebidos=await url.json() //Dados recebidos da API
+}`)
+        }
+        function get_copy() {
+            navigator.clipboard.writeText(`
+function ler_dados() {
+    fetch("url/api, method=['GET'])
+    .then(response => response.json())
+    .then(data => {
+        //Manipular dados recebidos
+    })
+}`)
+        }
+        function put_copy() {
+            navigator.clipboard.writeText(`
+function enviar_dados() {
+    fetch("url/api", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({'Nome': "Anailson", "Idade": 18})
+    })
+}`)
+        }
+        
+    </script>
+</body>
+</html>
