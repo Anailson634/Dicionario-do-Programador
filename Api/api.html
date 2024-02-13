@@ -111,7 +111,7 @@ app = Flask(__name__)
 dados_dic={"Nome": "Anailson", "Idade": 17}
 CORS(app)
 
-@app.rout("/", methods=["GET", "PUT"])
+@app.route("/", methods=["GET", "PUT"])
 def get_dados():
     #Aqui é onde carregamos e editamos os dados do arquivo json
 
