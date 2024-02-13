@@ -115,7 +115,7 @@ CORS(app)
 def get_dados():
     #Aqui é onde carregamos e editamos os dados do arquivo json
 
-    if request.mehtods=="PUT":
+    if request.mehtod=="PUT":
         date=request.get_json() #Pega os dados em JSON enviados pelo cliente
 
         for key, value in date.items(): #percorre os dados e sobscreve (ou adiciona) no dados_dic
